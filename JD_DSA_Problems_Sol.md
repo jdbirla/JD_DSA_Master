@@ -5,13 +5,6 @@
 - Java2Blog
     - https://java2blog.com/java-coding-interview-questions/
 
-
-write a program to find sum of two pairs equals to given number in given arrays values.
-
-Write a program to find Second largest number in an array
-write a stream find list of employe names whose name start with "a"
-input "[[( }})" , write code for validate.
-
 # Table of contents
 
 - [JD_DSA_Problems_Solutions](#jd_dsa_problems_solutions)
