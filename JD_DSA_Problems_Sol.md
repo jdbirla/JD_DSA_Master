@@ -1038,42 +1038,6 @@ public class FabonacciNumber {
 }
 
 ```
-### How can you find the factorial of an integer in Java?
-- OutPut: Factorial of 5 is: 120
-
-```java
-package com.jd.interviewprep.dsa.prob;
-
-public class Factorial {
-	public static void main(String[] args) {
-		int number = 5; // Example number
-
-		long factorial = calculateFactorialIterative(number);
-
-		System.out.println("Factorial of " + number + " is: " + factorial);
-		 factorial = calculateFactorialRecursive(number);
-
-		System.out.println("Factorial of " + number + " is: " + factorial);
-	}
-
-	public static long calculateFactorialIterative(int number) {
-		long factorial = 1;
-		for (int i = 1; i <= number; i++) {
-			factorial *= i;
-		}
-		return factorial;
-	}
-
-	public static long calculateFactorialRecursive(int number) {
-		if (number <= 1) {
-			return 1;
-		} else {
-			return number * calculateFactorialRecursive(number - 1);
-		}
-	}
-}
-
-```
 ---
 ## Binary Seach
 ### How do you implement a binary search in Java?
@@ -1120,6 +1084,69 @@ public class BinarySearch {
 }
 
 ```
+
+---
+## Misc
+### Check for balanced parentheses , { }
+```java
+public static boolean checkBalancedParentheses(String expression) {
+  Stack<Character> stack = new Stack<>();
+  for (char ch : expression.toCharArray()) {
+    if (ch == '(' || ch == '{' || ch == '[') {
+      stack.push(ch);
+    } else if (ch == ')' || ch == '}' || ch == ']') {
+      if (stack.isEmpty()) {
+        return false;
+      }
+      char top = stack.pop();
+      if ((ch == ')' && top != '(') ||
+          (ch == '}' && top != '{') ||
+          (ch == ']' && top != '[')) {
+        return false;
+      }
+    }
+  }
+  return stack.isEmpty();
+}
+```
+
+### How can you find the factorial of an integer in Java?
+- OutPut: Factorial of 5 is: 120
+
+```java
+package com.jd.interviewprep.dsa.prob;
+
+public class Factorial {
+	public static void main(String[] args) {
+		int number = 5; // Example number
+
+		long factorial = calculateFactorialIterative(number);
+
+		System.out.println("Factorial of " + number + " is: " + factorial);
+		 factorial = calculateFactorialRecursive(number);
+
+		System.out.println("Factorial of " + number + " is: " + factorial);
+	}
+
+	public static long calculateFactorialIterative(int number) {
+		long factorial = 1;
+		for (int i = 1; i <= number; i++) {
+			factorial *= i;
+		}
+		return factorial;
+	}
+
+	public static long calculateFactorialRecursive(int number) {
+		if (number <= 1) {
+			return 1;
+		} else {
+			return number * calculateFactorialRecursive(number - 1);
+		}
+	}
+}
+
+```
+
 
 
 
