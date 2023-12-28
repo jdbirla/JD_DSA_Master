@@ -91,6 +91,26 @@ public class ReverseString {
 		return reverseString(str.substring(1)) + str.charAt(0);
 
 	}
+public static String reverse(String str) {
+    
+  char[] chars = str.toCharArray();
+  int start = 0;
+  int end = chars.length - 1;
+
+  while (start < end) {
+    // Swap characters at start and end indices
+    char temp = chars[start];
+    chars[start] = chars[end];
+    chars[end] = temp;
+
+    // Move the indices towards the center
+    start++;
+    end--;
+  }
+
+  return new String(chars);
+}
+
 }
 ```
 
@@ -1139,8 +1159,19 @@ public class Factorial {
 }
 
 ```
-
-
+### FizzBuzz
+`if number is divisible by 5.
+ 	if number is divisible by 7 the print FizzBuzz.
+ 	else print Fizz.
+if number is divisible by 7 the print Buzz.
+	else print the number.
+`
+```java
+IntStream.rangeClosed(1, 100)
+  .mapToObj(i -> i % 5 == 0 ? (i % 7 == 0 ? "FizzBuzz" : "Fizz") : (i % 7 == 0 ? "Buzz" : i))
+  .forEach(System.out::println);
+```
+### 
 
 
 
