@@ -751,6 +751,37 @@ public class FindPairWithTargetSum {
 	}
 }
 ```
+```java
+package com.howtodoinjava.puzzles;
+
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+
+public class TwoSum {
+
+  public static void main(String[] args) {
+    int[] nums = {2, 7, 11, 18};
+    int sum = 9;
+
+    int[] result = twoSum(nums, sum);
+    System.out.println(Arrays.toString(result));
+  }
+
+  private static int[] twoSum(int[] nums, int sum) {
+
+    for (int i = 0; i < nums.length; i++) {
+      int complement = sum - nums[i];
+      int foundAtIndex = Arrays.binarySearch(nums, complement);
+
+      if(foundAtIndex > 0) {
+        return new int[] {nums[i], nums[foundAtIndex]};
+      }
+    }
+    return null;
+  }
+}
+```
 ### Find Common elements in two array using java8
 
 ```java
@@ -947,15 +978,31 @@ public class RotateAnArrayByKPosition {
 ```
 ### Find duplicates in an array
 ```java
-Integer[] array = {1, 2, 3, 2, 4, 3, 5, 6, 5, 7, 8, 8, 9};
-MultiMap multiMap = new MultiHashMap();
-for (int num : array) {
-  multiMap.put(num, num);
+package com.howtodoinjava.puzzles;
+
+import java.util.ArrayList;
+import java.util.List;
+import org.apache.commons.collections.MultiHashMap;
+import org.apache.commons.collections.MultiMap;
+
+public class FindAllDuplicateNumbers {
+
+  public static void main(String[] args) {
+    Integer[] array = {1, 2, 3, 2, 4, 3, 5, 6, 5, 7, 8, 8, 9};
+
+    //1
+    MultiMap multiMap = new MultiHashMap();
+    for (int num : array) {
+      multiMap.put(num, num);
+    }
+
+    List duplicates = multiMap.keySet().stream()
+        .filter(i -> ((ArrayList) multiMap.get(i)).size() > 1)
+        .toList();
+
+    System.out.println(duplicates);
+  }
 }
-List duplicates = multiMap.keySet().stream()
-    .filter(i -> ((ArrayList) multiMap.get(i)).size() > 1)
-    .toList();
-System.out.println(duplicates);	//Prints [2, 3, 5, 8]
 
 ```
 ---
