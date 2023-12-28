@@ -5,6 +5,27 @@
 - Java2Blog
     - https://java2blog.com/java-coding-interview-questions/
 
+1. Introduction based on tech stacks.
+2. projects in details
+3. write a stream to find common values in two different Arrays values.
+4. write a program to implement queue like stack.
+5. write a program to find sum of two pairs equals to given number in given arrays values.
+6. Spring batch implementation on counter questions.
+7. what is your strength
+8. Difference between Thread and Process. on counter questions
+9. More and dept on project related questions.
+10. how to read data from source file and modify data after that write to output file.
+11. where to deploy your project.
+12. Write a program to find Second largest number in an array
+1. write a stream find list of employe names whose name start with "a"
+2. input "[[( }})" , write code for validate.
+3. find value from cooky user id,
+4. when will go for @PathVariable and @RequestParam
+5. in spring boot, where to store password cenctive information.
+6. if login failed , how to call login page again from back end ?
+7. why we are not useing more than one abstract methos in functional interface.
+8. can we create constructor in Abstract class.
+9. can we create object for Abstract clas
 # Table of contents
 
 - [JD_DSA_Problems_Solutions](#jd_dsa_problems_solutions)
