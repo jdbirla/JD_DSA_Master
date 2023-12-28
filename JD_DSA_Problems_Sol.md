@@ -5,8 +5,7 @@
 - Java2Blog
     - https://java2blog.com/java-coding-interview-questions/
 
-write a stream to find common values in two different Arrays values.
-write a program to implement queue like stack.
+
 write a program to find sum of two pairs equals to given number in given arrays values.
 
 Write a program to find Second largest number in an array
@@ -958,6 +957,8 @@ public static void main(String[] args) {
 - https://java2blog.com/implement-queue-using-array-in-java/
 ### Implement Queue using Linked List in java
 - https://java2blog.com/implement-queue-using-linked-list-in-java/
+### write a program to implement queue using stack.
+- https://www.geeksforgeeks.org/queue-using-stacks/
 ---
 ## Recursion
 ### Write a Java program to print a Fibonacci sequence using recursion.
