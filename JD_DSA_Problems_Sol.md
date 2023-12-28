@@ -10,10 +10,6 @@
 
   
 # Table of contents
-
-- [JD_DSA_Problems_Solutions](#jd_dsa_problems_solutions)
-  - [- https://github.com/lokeshgupta1981/Core-Java/tree/master/src/main/java/com/howtodoinjava/puzzles](#--httpsgithubcomlokeshgupta1981core-javatreemastersrcmainjavacomhowtodoinjavapuzzles)
-- [Table of contents](#table-of-contents)
   - [String](#string)
     - [How do you reverse a string in Java?](#how-do-you-reverse-a-string-in-java)
     - [How do you check whether a string is a palindrome in Java?](#how-do-you-check-whether-a-string-is-a-palindrome-in-java)
