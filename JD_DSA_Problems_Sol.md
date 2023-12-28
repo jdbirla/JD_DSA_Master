@@ -6,6 +6,8 @@
     - https://java2blog.com/java-coding-interview-questions/
 - Hotodoinjava
    - https://howtodoinjava.com/interview-questions/interview-puzzles-coding-exercises/
+   - https://github.com/lokeshgupta1981/Core-Java/tree/master/src/main/java/com/howtodoinjava/puzzles
+- 
 
 # Table of contents
 
