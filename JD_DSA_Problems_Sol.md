@@ -319,7 +319,7 @@ public class GetFirstNonRepeatingCharacter {
 
 ```
 ###  Find the longest substring without repeating characters
-`
+```
 Given a string, write a Java program to find the length of the longest substring without repeating characters.
 
 We can solve this puzzle using the sliding window approach. It uses two variables left and right to track the start and end index of the substring in the specified argument string. Initially, they can be 0 and 0.
@@ -329,7 +329,7 @@ A Set represents the current substring under test. Initially, the set can be emp
 We iterate through the string while expanding the right boundary of the substring. If the current character is already present in the set, it means we have a repeating character and we remove it from the left side of the sliding window and move the left boundary to the right. This process continues until there are no repeating characters in the current substring.
 
 Finally, we return the size of the Set that represents the largest substring.
-`
+```
 
 ```java
 package com.howtodoinjava.puzzles;
