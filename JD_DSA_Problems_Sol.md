@@ -945,6 +945,19 @@ public class RotateAnArrayByKPosition {
 		}
 	}
 ```
+### Find duplicates in an array
+```java
+Integer[] array = {1, 2, 3, 2, 4, 3, 5, 6, 5, 7, 8, 8, 9};
+MultiMap multiMap = new MultiHashMap();
+for (int num : array) {
+  multiMap.put(num, num);
+}
+List duplicates = multiMap.keySet().stream()
+    .filter(i -> ((ArrayList) multiMap.get(i)).size() > 1)
+    .toList();
+System.out.println(duplicates);	//Prints [2, 3, 5, 8]
+
+```
 ---
 ## Linked-List
 ### How do you reverse a linked list in Java?
