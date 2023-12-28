@@ -145,6 +145,14 @@ public class PalindromeString {
 		return true;
 
 	}
+public static Boolean isPalindromeUsingStringBuilder(String input) {
+String string = "naman";
+String reversed = new StringBuilder(originalString).reverse().toString();
+boolean isPalindrome = string.equalsIgnoreCase(reversed); //prints 'true'
+
+	}
+
+
 }
 
 ```
