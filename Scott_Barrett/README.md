@@ -6,3 +6,6 @@
   ![Big+O+Notes](https://github.com/jdbirla/JD_DSA_Master/assets/69948118/37c1df6d-e397-4f3e-9278-8e81771b3e4b)
 
 ## Classes & Pointers
+
+## LinkedList
+![LL+Big+O](https://github.com/jdbirla/JD_DSA_Master/assets/69948118/cf0bfd40-7ae0-47a5-96fe-ac224d808912)
