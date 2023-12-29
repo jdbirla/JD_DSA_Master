@@ -34,6 +34,10 @@
 | LinkedHashMap  | Access: O(1) <br> Search: O(1) <br> Insertion: O(1) <br> Deletion: O(1) | Access: O(1) <br> Search: O(1) <br> Insertion: O(1) <br> Deletion: O(1) | LinkedHashMap is an ordered map that maintains the insertion order of key-value pairs. It offers constant-time complexity for search, insertion, and deletion. Suitable when the order of insertion is important and fast access to key-value pairs is required. |
 | Hashtable      | Access: N/A <br> Search: O(1) <br> Insertion: O(1) <br> Deletion: O(1) | Access: N/A <br> Search: O(n) <br> Insertion: O(n) <br> Deletion: O(n) | Hashtable is an implementation of a hash table that stores key-value pairs. It offers constant-time complexity for search, insertion, and deletion assuming a good hash function and uniform distribution of keys. Suitable for fast retrieval and storage of key-value pairs but has been largely replaced by HashMap in modern Java programming. |
 
+## https://www.bigocheatsheet.com/
+![image](https://github.com/jdbirla/JD_DSA_Master/assets/69948118/c1f64867-0e80-4acc-a8fa-d3b55f8fa95a)
+![image](https://github.com/jdbirla/JD_DSA_Master/assets/69948118/a01a271f-828d-4677-8002-bd588319d7c4)
+
 
 ## Array
 - A fixed-size collection of elements of the same type, accessed by an index.
