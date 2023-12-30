@@ -621,7 +621,7 @@ public class LargestSmallestNumberInArray {
 	}
 }
 ```
-## FindAllDuplicateNumbers
+### FindAllDuplicateNumbers
 
 ```java
 package com.jd.interviewprep.dsa.prob.array;
