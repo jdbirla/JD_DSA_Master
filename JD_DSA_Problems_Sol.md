@@ -578,6 +578,7 @@ public class ArraySameElements {
 }
 ```
 ### Java code to find Smallest and Largest Element in an Array :
+
 ```java
 package com.jd.interviewprep.dsa.prob;
 
@@ -614,8 +615,9 @@ public class LargestSmallestNumberInArray {
 		System.out.println("Largest Number is : " + largest);
 
 	}
-
 }
+```
+## FindAllDuplicateNumbers
 
 ```java
 package com.howtodoinjava.puzzles;
@@ -644,7 +646,8 @@ public class FindAllDuplicateNumbers {
   }
 }
 ```
-```
+
+
 ### Java program to find missing number in an array:
 
 ```java
