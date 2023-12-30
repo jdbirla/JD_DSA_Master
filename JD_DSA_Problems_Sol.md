@@ -1211,7 +1211,75 @@ public class RemoveElementFromArray {
 
 ```
 
-### 
+### Write a method that, given an array of strings, finds and returns the longest string in the array. 
+```java
+package com.jd.interviewprep.dsa.prob.array;
+
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.Optional;
+
+public class LongestStringFinder {
+	public static String findLongestString(String[] strings) {
+		if (strings == null || strings.length == 0) {
+			return null; // or throw an exception, depending on your requirements
+		}
+
+		// Use Arrays.stream to create a stream of strings, find the max based on length
+		// Optional<String> result = Arrays.stream(strings).max((s1, s2) ->
+		// Integer.compare(s1.length(), s2.length()));
+		Optional<String> result = Arrays.stream(strings).sorted(Comparator.comparing(String::length).reversed())
+				.findFirst();
+
+		// Return the result or a default value if the array is empty
+		return result.orElse(null);
+	}
+
+	public static void main(String[] args) {
+		String[] strings = { "apple", "banana", "orange", "grapefruit", "kiwi", "pear" };
+
+		System.out.println("Original array: " + Arrays.toString(strings));
+
+		String longestString = findLongestString(strings);
+
+		System.out.println("Longest string: " + longestString);
+	}
+}
+
+```
+
+### Max Sub Array You have been asked to create a method in Java, maxSubarray, that finds the contiguous subarray (containing at least one number) which has the largest sum and returns its sum.
+```java
+package com.jd.interviewprep.dsa.prob.array;
+
+import java.util.Arrays;
+
+public class MaxSubArray {
+	public static int maxSubarray(int[] nums) {
+		if (nums.length == 0) {
+			return 0;
+		}
+
+		int maxSum = nums[0];
+		int currentSum = nums[0];
+
+		for (int i = 1; i < nums.length; i++) {
+			currentSum = Math.max(nums[i], currentSum + nums[i]);
+			maxSum = Math.max(maxSum, currentSum);
+		}
+
+		return maxSum;
+	}
+
+	public static void main(String[] args) {
+		int[] inputCase1 = { -2, 1, -3, 4, -1, 2, 1, -5, 4 };
+		int result1 = maxSubarray(inputCase1);
+		System.out.println("Example 1: Input: " + Arrays.toString(inputCase1) + "\nResult: " + result1);
+
+	}
+}
+
+```
 ---
 ## Linked-List
 
