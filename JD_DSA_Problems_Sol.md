@@ -539,66 +539,6 @@ public class RotateArrayByKPoition {
     }
 }
 ```
-`
-Write a Java program to rotate an array of size n by k positions to the right.
-
-To solve this puzzle, we can use the following pseudo-code. We will also use an example array to understand it better.
-
-Suppose, we have the initial array [1, 2, 3, 4, 5] and we want to rotate it by 2 positions.
-
-Intialize the variables n = array.length (5); and k = 2;
-Rotate the complete array ->			[5, 4, 3, 2, 1]
-Reverse the array from positions 0 to k-1 -> 	[4, 5, 3, 2, 1]
-Reverse the array from positions k to n-1 -> [4, 5, 1, 2, 3]
-After the program finishes, the array will be reversed by k positions.
-
-Let us write a Java program for the above pseudo-code.
-`
-
-```java
-package com.howtodoinjava.puzzles;
-
-import java.util.Arrays;
-
-public class ArrayRotation {
-  public static void main(String[] args) {
-    int[] array = {1, 2, 3, 4, 5};
-    int k = 2;
-
-    System.out.println("Original Array: " + Arrays.toString(array));
-
-    rotateArray(array, k);
-
-    System.out.println("Rotated Array: " + Arrays.toString(array));
-  }
-
-  public static void rotateArray(int[] array, int k) {
-    if (array == null || array.length == 0) {
-      return;
-    }
-
-    int n = array.length;
-    k = k % n; // Adjust k if it is greater than n
-
-    reverseArray(array, 0, n - 1); // Reverse the entire array
-    reverseArray(array, 0, k - 1); // Reverse the first k elements
-    reverseArray(array, k, n - 1); // Reverse the remaining n-k elements
-  }
-
-  public static void reverseArray(int[] array, int start, int end) {
-
-    while (start < end) {
-      int temp = array[start];
-      array[start] = array[end];
-      array[end] = temp;
-      start++;
-      end--;
-    }
-  }
-}
-
-```
-
 ### Write Java program that checks if two arrays contain the same elements.
 
 ```java
