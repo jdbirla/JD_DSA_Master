@@ -1,4 +1,4 @@
-package com.jd.linkedlist;
+package com.jd.ds.linkedlist;
 
 public class LinkedList {
     private Node head;

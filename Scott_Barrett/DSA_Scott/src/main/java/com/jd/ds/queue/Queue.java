@@ -1,6 +1,4 @@
-package com.jd.queue;
-
-import com.jd.stack.Stack;
+package com.jd.ds.queue;
 
 public class Queue {
 

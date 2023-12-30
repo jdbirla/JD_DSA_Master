@@ -1,4 +1,4 @@
-package com.jd.bigo;
+package com.jd.ds.bigo;
 
 public class BigO {
     public static void main(String[] args) {

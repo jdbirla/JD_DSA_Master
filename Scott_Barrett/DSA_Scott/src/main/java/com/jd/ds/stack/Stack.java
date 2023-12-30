@@ -1,4 +1,4 @@
-package com.jd.stack;
+package com.jd.ds.stack;
 
 public class Stack {
 

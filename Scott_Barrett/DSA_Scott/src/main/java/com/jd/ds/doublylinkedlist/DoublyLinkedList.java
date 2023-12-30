@@ -1,7 +1,5 @@
-package com.jd.doublylinkedlist;
+package com.jd.ds.doublylinkedlist;
 
-
-import com.jd.linkedlist.LinkedList;
 
 public class DoublyLinkedList {
 
