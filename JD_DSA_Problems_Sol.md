@@ -976,27 +976,35 @@ public class FindDifferentValuesInTwoArrays {
 
 ### Separate 0s and 1s in an array
 
-
 ```java
 package com.jd.interviewprep.dsa.prob.array;
 
-public class Separate0s1sSolution1 {
+import java.util.Arrays;
 
-	public static void main(String[] args) {
-		int arr[]={0,1,0,0,1,1,1,0,1};
-		  System.out.println("Original Array: ");
-		  for (int i = 0; i < arr.length; i++) {
-		   System.out.print(arr[i]+" ");
-		  }
-		  arr=separate0s1sSolution1(arr);
-		  System.out.println("n===========================");
-		  System.out.println("Solution 1");
-		  System.out.println("nArray after separating 0's and 1's : ");
-		  for (int i = 0; i < arr.length; i++) {
-		   System.out.print(arr[i]+" ");
-		  }
-	}
-	public static int[] separate0s1sSolution1(int arr[])
+public class SeparateZerosOnesJava8 {
+    public static void separateZerosOnes(int[] array) {
+        if (array == null || array.length == 0) {
+            System.out.println("Array is empty or null.");
+            return;
+        }
+
+        int[] separatedArray = Arrays.stream(array)
+                .boxed()
+                .sorted((a, b) -> a.compareTo(b))
+                .mapToInt(Integer::intValue)
+                .toArray();
+        printArray(separatedArray);
+        System.arraycopy(separatedArray, 0, array, 0, array.length);
+    }
+
+    public static void printArray(int[] array) {
+        for (int num : array) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+    }
+
+    public static int[] separate0s1sSolution1(int arr[])
 	 {
 	  int count=0;
 	  for (int i = 0; i < arr.length; i++) {
@@ -1013,8 +1021,27 @@ public class Separate0s1sSolution1 {
 	  }
 	  return arr;
 	 }
-	 
+    
+    public static void main(String[] args) {
+        int[] array = {0, 1, 0, 1, 1, 0, 1, 0, 0, 1};
+
+        System.out.println("Original array:");
+        printArray(array);
+
+        separateZerosOnes(array);
+
+        System.out.println("Array after separating 0s and 1s:");
+        printArray(array);
+        
+        
+        separate0s1sSolution1(array);
+
+        System.out.println("separate0s1sSolution1 Array after separating 0s and 1s:");
+        printArray(array);
+        
+    }
 }
+
 ```
 ### Find First repeating element in array
 ```java
