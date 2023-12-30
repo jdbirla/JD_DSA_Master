@@ -1190,6 +1190,28 @@ public class CommonElementsInArrays {
   }
 }
 ```
+
+### Remove the given elements from the array and retrun new length of array
+```java
+package com.jd.interviewprep.dsa.prob.array;
+
+import java.util.Arrays;
+
+public class RemoveElementFromArray {
+
+	public static void main(String[] args) {
+		int[] nums = { 3, 2, 2, 3, 4, 5, 2, 6 };
+		int val = 2;
+
+		int[] result = Arrays.stream(nums).filter(num -> num != val).toArray();
+
+		System.out.println(result.length);
+	}
+}
+
+```
+
+### 
 ---
 ## Linked-List
 
