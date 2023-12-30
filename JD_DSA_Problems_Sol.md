@@ -8,8 +8,6 @@
    - https://howtodoinjava.com/interview-questions/interview-puzzles-coding-exercises/
    - https://github.com/lokeshgupta1981/Core-Java/tree/master/src/main/java/com/howtodoinjava/puzzles
 
-  
-# Table of contents
   - [String](#string)
     - [How do you reverse a string in Java?](#how-do-you-reverse-a-string-in-java)
     - [How do you check whether a string is a palindrome in Java?](#how-do-you-check-whether-a-string-is-a-palindrome-in-java)
@@ -17,12 +15,15 @@
     - [How to check if one String is rotation of another String in java?](#how-to-check-if-one-string-is-rotation-of-another-string-in-java)
     - [Find first non repeated character in String in java?](#find-first-non-repeated-character-in-string-in-java)
     - [Find the longest substring without repeating characters](#find-the-longest-substring-without-repeating-characters)
+    - [How to check if String has all unique characters in java](#how-to-check-if-string-has-all-unique-characters-in-java)
+    - [Java Program to find duplicate Characters in a String](#java-program-to-find-duplicate-characters-in-a-string)
+    - [Find all substrings of a String in java](#find-all-substrings-of-a-string-in-java)
   - [Array Problems](#array-problems)
     - [Java program to find missing number in an array](#java-program-to-find-missing-number-in-an-array)
     - [Rotate an array by K positions.](#rotate-an-array-by-k-positions)
     - [Write Java program that checks if two arrays contain the same elements.](#write-java-program-that-checks-if-two-arrays-contain-the-same-elements)
     - [Java code to find Smallest and Largest Element in an Array :](#java-code-to-find-smallest-and-largest-element-in-an-array-)
-    - [Java program to find missing number in an array:](#java-program-to-find-missing-number-in-an-array)
+  - [FindAllDuplicateNumbers](#findallduplicatenumbers)
     - [Java program to find minimum element in a sorted and rotated array :](#java-program-to-find-minimum-element-in-a-sorted-and-rotated-array-)
     - [Find second largest number in an array](#find-second-largest-number-in-an-array)
     - [Find the number occurring odd number of times in an array](#find-the-number-occurring-odd-number-of-times-in-an-array)
@@ -34,9 +35,12 @@
     - [Find First repeating element in array](#find-first-repeating-element-in-array)
     - [Check if Array Elements are Consecutive](#check-if-array-elements-are-consecutive)
     - [Rotate an Array left and right by k position](#rotate-an-array-left-and-right-by-k-position)
-    - [Find duplicates in an array](#find-duplicates-in-an-array)
     - [Find the common elements in multiple sorted arrays](#find-the-common-elements-in-multiple-sorted-arrays)
+    - [Remove the given elements from the array and retrun new length of array](#remove-the-given-elements-from-the-array-and-retrun-new-length-of-array)
+    - [Write a method that, given an array of strings, finds and returns the longest string in the array.](#write-a-method-that-given-an-array-of-strings-finds-and-returns-the-longest-string-in-the-array)
+    - [Max Sub Array You](#max-sub-array-you)
   - [Linked-List](#linked-list)
+    - [Linked List implementation](#linked-list-implementation)
     - [How do you reverse a linked list in Java?](#how-do-you-reverse-a-linked-list-in-java)
     - [Implement singly linked list in java](#implement-singly-linked-list-in-java)
     - [Reverse a linked list in java](#reverse-a-linked-list-in-java)
@@ -1248,7 +1252,8 @@ public class LongestStringFinder {
 
 ```
 
-### Max Sub Array You have been asked to create a method in Java, maxSubarray, that finds the contiguous subarray (containing at least one number) which has the largest sum and returns its sum.
+### Max Sub Array You
+- have been asked to create a method in Java, maxSubarray, that finds the contiguous subarray (containing at least one number) which has the largest sum and returns its sum.
 ```java
 package com.jd.interviewprep.dsa.prob.array;
 
