@@ -70,7 +70,7 @@
 - Output: hello world
 StringBuilder : dlrow olleh
 ```java
-package com.jd.interviewprep.dsa.prob;
+package com.jd.interviewprep.dsa.prob.array;
 
 public class ReverseString {
 
@@ -83,6 +83,7 @@ public class ReverseString {
 		System.out.println("StringBuilder : " + stringBuilder(str));
 		System.out.println("usingLoop : " + usingLoop(str));
 		System.out.println("reverseString : " + reverseString(str));
+		System.out.println("reverseCharArray : " + reverseCharArray(str));
 
 	}
 
@@ -102,6 +103,7 @@ public class ReverseString {
 		return result;
 	}
 
+	// using recursion
 	public static String reverseString(String str) {
 		if (str.isEmpty()) {
 			return str;
@@ -109,27 +111,28 @@ public class ReverseString {
 		return reverseString(str.substring(1)) + str.charAt(0);
 
 	}
-public static String reverse(String str) {
-    
-  char[] chars = str.toCharArray();
-  int start = 0;
-  int end = chars.length - 1;
 
-  while (start < end) {
-    // Swap characters at start and end indices
-    char temp = chars[start];
-    chars[start] = chars[end];
-    chars[end] = temp;
+	public static String reverseCharArray(String str) {
 
-    // Move the indices towards the center
-    start++;
-    end--;
-  }
+		char[] chars = str.toCharArray();
+		int start = 0;
+		int end = chars.length - 1;
 
-  return new String(chars);
+		while (start < end) {
+			// Swap characters at start and end indices
+			char temp = chars[start];
+			chars[start] = chars[end];
+			chars[end] = temp;
+
+			// Move the indices towards the center
+			start++;
+			end--;
+		}
+
+		return new String(chars);
+	}
 }
 
-}
 ```
 
 ###  How do you check whether a string is a palindrome in Java?
