@@ -140,7 +140,7 @@ public class ReverseString {
 - Output: madam is a palindrome.
 
 ```java
-package com.jd.interviewprep.dsa;
+package com.jd.interviewprep.dsa.prob.string;
 
 public class PalindromeString {
 
@@ -148,6 +148,12 @@ public class PalindromeString {
 		String str = "madam"; // Example string
 
 		if (isPalindrome(str)) {
+			System.out.println(str + " is a palindrome.");
+		} else {
+			System.out.println(str + " is not a palindrome.");
+		}
+
+		if (isPalindromeUsingStringBuilder(str)) {
 			System.out.println(str + " is a palindrome.");
 		} else {
 			System.out.println(str + " is not a palindrome.");
@@ -166,14 +172,13 @@ public class PalindromeString {
 		return true;
 
 	}
-public static Boolean isPalindromeUsingStringBuilder(String input) {
-String string = "naman";
-String reversed = new StringBuilder(originalString).reverse().toString();
-boolean isPalindrome = string.equalsIgnoreCase(reversed); //prints 'true'
+
+	public static Boolean isPalindromeUsingStringBuilder(String input) {
+		String reversed = new StringBuilder(input).reverse().toString();
+		boolean isPalindrome = input.equalsIgnoreCase(reversed); // prints 'true'
+		return isPalindrome;
 
 	}
-
-
 }
 
 ```
