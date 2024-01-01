@@ -1902,6 +1902,8 @@ IntStream.rangeClosed(1, 100)
   .forEach(System.out::println);
 ```
 ### BinaryOperationProblem
+- Given a number N and two reduction operations, count the number of operations required to reduce N to 0.
+You are given a string S of length N which encodes a non-negative number V in a binary form. Two types of operations may be performed on it to modify its value:
 ```java
 package com.jd.interviewprep.dsa.prob;
 
