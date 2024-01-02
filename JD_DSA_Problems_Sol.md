@@ -280,11 +280,13 @@ Put this character in LinkedHashMap with count. If character is already there, i
 Get count from LinkedHashMap while iterating. If count is 1,return that character as LinkedHashMap maintains insertion order.
 
 ```java
-package com.jd.interviewprep.dsa.prob;
+package com.jd.interviewprep.dsa.prob.string;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class GetFirstNonRepeatingCharacter {
 	public static void main(String[] args) {
@@ -292,16 +294,22 @@ public class GetFirstNonRepeatingCharacter {
 				.println("First non repeated character for String analogy is : " + getNonRepeatedCharacter("analogy"));
 		System.out
 				.println("First non repeated character for String easiest is : " + getNonRepeatedCharacter("easiest"));
+
+		System.out.println("First non repeated character for String analogy using java 8 is : "
+				+ findDuplicatesUsingStream("analogy"));
+		System.out.println(
+				"First non repeated character for String easiest  java 8 is : " + findDuplicatesUsingStream("easiest"));
 	}
 
 	public static Character getNonRepeatedCharacter(String str) {
 		Map<Character, Integer> countCharacters = new LinkedHashMap<Character, Integer>();
 		for (int i = 0; i < str.length() - 1; i++) {
 			Character c = str.charAt(i);
-			if (!countCharacters.containsKey(c)) {
-				countCharacters.put(c, 1);
-			} else {
+
+			if (countCharacters.containsKey(c)) {
 				countCharacters.put(c, countCharacters.get(c) + 1);
+			} else {
+				countCharacters.put(c, 1);
 			}
 		}
 		// As LinkedHashMap maintains insertion order, first character with
@@ -314,7 +322,19 @@ public class GetFirstNonRepeatingCharacter {
 		return null;
 
 	}
+
+	private static Character findDuplicatesUsingStream(String name) {
+		LinkedHashMap<Character, Long> collect = name.replaceAll("\\W", "").chars().mapToObj(c -> (char) c)
+				.collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new, Collectors.counting()));
+
+		Character character = collect.entrySet().stream().filter(entry -> entry.getValue() == 1).findFirst()
+				.map(e -> e.getKey()).get();
+
+		return character;
+	}
+
 }
+
 
 ```
 ###  Find the longest substring without repeating characters
