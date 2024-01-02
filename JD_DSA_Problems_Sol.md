@@ -351,45 +351,56 @@ Finally, we return the size of the Set that represents the largest substring.
 `
 
 ```java
-package com.howtodoinjava.puzzles;
+package com.jd.interviewprep.dsa.prob.string;
 
 import java.util.HashSet;
 import java.util.Set;
-
+//Longest substring without repeating characters
+//We use a set (charSet) to keep track of unique characters in the current substring.
+//We maintain two pointers, left and right, to represent the boundaries of the current substring.
+//The maxLength variable keeps track of the length of the longest substring encountered so far.
+//We iterate through the string using the right pointer.
+//If the current character is not in the set (charSet), it means we have a new unique character.
+//We insert the character into the set and update the maxLength if necessary.
+//If the character is already present in the set, it indicates a repeating character within the current substring.
+//In this case, we move the left pointer forward, removing characters from the set until the repeating character is no longer present.
+//We insert the current character into the set and continue the iteration.
+//Finally, we return the maxLength as the length of the longest substring without repeating characters.
 public class LongestSubstringLength {
+	 public static void main(String[] args) {
 
-  public static void main(String[] args) {
+		    String input = "abcabcbb";
+		    int length = findLongestSubstringLength(input);
 
-    String input = "abcabcbb";
-    int length = findLongestSubstringLength(input);
+		    System.out.println(length); //3
+		  }
 
-    System.out.println(length); //3
-  }
+		  public static int findLongestSubstringLength(String str) {
 
-  public static int findLongestSubstringLength(String str) {
+		    int maxLength = 0;
+		    int left = 0;
+		    int right = 0;
+		    Set<Character> slidingWindow = new HashSet<>();
 
-    int maxLength = 0;
-    int left = 0;
-    int right = 0;
-    Set<Character> slidingWindow = new HashSet<>();
+		    while (right < str.length()) {
 
-    while (right < str.length()) {
+		      char currentChar = str.charAt(right);
 
-      char currentChar = str.charAt(right);
+		      if (slidingWindow.contains(currentChar)) {
+		        slidingWindow.remove(str.charAt(left));
+		        left++;
+		      } else {
+		        slidingWindow.add(currentChar);
+		        maxLength = Math.max(maxLength, right - left + 1);
+		        right++;
+		      }
+		    }
 
-      if (slidingWindow.contains(currentChar)) {
-        slidingWindow.remove(str.charAt(left));
-        left++;
-      } else {
-        slidingWindow.add(currentChar);
-        maxLength = Math.max(maxLength, right - left + 1);
-        right++;
-      }
-    }
-
-    return maxLength;
-  }
+		    return maxLength;
+		  }
 }
+
+
 ```
 
 ### How to check if String has all unique characters in java
