@@ -473,6 +473,52 @@ public class FindDuplicateCharactersInString {
 
 ```
 
+### Remove duplicate characters in String
+```java
+package com.jd.interviewprep.dsa.prob.string;
+
+import java.util.LinkedHashSet;
+import java.util.stream.Collectors;
+
+public class RemoveDuplicateCharactersInString {
+	public static void main(String[] args) {
+		String inputString = "programming";
+		System.out.println("Original String: " + inputString);
+
+		String removeDuplicateCharactersJava8 = removeDuplicateCharactersJava8(inputString);
+		System.out.println("String without duplicate characters: " + removeDuplicateCharactersJava8);
+		String removeDuplicateCharacters = removeDuplicateCharactersTraditional(inputString);
+		System.out.println("String without duplicate characters: " + removeDuplicateCharacters);
+	}
+
+	public static String removeDuplicateCharactersJava8(String str) {
+
+		String resultString = str.chars().distinct().mapToObj(c -> String.valueOf((char) c))
+				.collect(Collectors.joining());
+		return resultString;
+
+	}
+
+	public static String removeDuplicateCharactersTraditional(String str) {
+
+		char[] charArray = str.toCharArray();
+		LinkedHashSet<Character> uniqueChars = new LinkedHashSet<>();
+
+		for (char c : charArray) {
+			uniqueChars.add(c);
+		}
+
+		StringBuilder resultStringBuilder = new StringBuilder();
+		for (Character c : uniqueChars) {
+			resultStringBuilder.append(c);
+		}
+
+		return resultStringBuilder.toString();
+
+	}
+}
+
+```
 ### Find all substrings of a String in java
 ```java
 package com.jd.interviewprep.dsa.prob.string;
@@ -681,6 +727,60 @@ public class FindAllDuplicateNumbers {
 
 		System.out.println(collect2);
 	}
+}
+
+```
+
+### Remove duplicate elements from int array in java
+```java
+package com.jd.interviewprep.dsa.prob.array;
+
+import java.util.Arrays;
+
+public class RemoveDuplicate {
+	public static void main(String[] args) {
+		int[] array = { 1, 2, 3, 4, 3, 2, 5, 6, 7, 8, 1 };
+
+		int[] removeDuplicatesUsingStream = removeDuplicatesUsingStream(array);
+		System.out.println(Arrays.toString(removeDuplicatesUsingStream));
+
+		int[] removeDuplicatesUsingStream1 = removeDuplicates(array);
+		System.out.println(Arrays.toString(removeDuplicatesUsingStream1));
+
+	}
+
+	private static int[] removeDuplicatesUsingStream(int[] array) {
+		// Use IntStream to create a stream of distinct values
+		int[] distinctArray = Arrays.stream(array).distinct().toArray();
+		return distinctArray;
+	}
+
+	private static int[] removeDuplicates(int[] array) {
+		int n = array.length;
+
+		// Check for empty or single element array
+		if (n <= 1) {
+			return array;
+		}
+
+		// Sorting the array
+		Arrays.sort(array);
+
+		// Counting duplicates
+		int count = 0;
+		for (int i = 1; i < n; i++) {
+			if (array[i] != array[count]) {
+				count++;
+				array[count] = array[i];
+			}
+		}
+
+		// Creating a new array with distinct elements
+		int[] distinctArray = Arrays.copyOf(array, count + 1);
+
+		return distinctArray;
+	}
+
 }
 
 ```
