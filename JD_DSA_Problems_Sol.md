@@ -410,8 +410,9 @@ public class StringAllUniqueCharMain {
 
 ### Java Program to find duplicate Characters in a String
 ```java
-package com.jd.interviewprep.dsa.prob.array;
+package com.jd.interviewprep.dsa.prob.string;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -424,6 +425,7 @@ public class FindDuplicateCharactersInString {
 	public static void main(String[] args) {
 		System.out.println(findDuplicatesUsingMaps("code decode")); // Time complexity = O(NLogn),
 		System.out.println(findDuplicatesUsingStream("code decode")); // Time complexity = O(NLogn),
+		System.out.println(findDuplicatesUsingStringStream("Jitendra birla")); // Time complexity = O(NLogn),
 	}
 
 	private static List<Character> findDuplicatesUsingStream(String name) {
@@ -432,6 +434,18 @@ public class FindDuplicateCharactersInString {
 
 		List<Character> collect2 = collect.entrySet().stream().filter(entry -> entry.getValue() > 1)
 				.map(e -> e.getKey()).collect(Collectors.toList());
+
+		return collect2;
+	}
+
+	private static List<String> findDuplicatesUsingStringStream(String name) {
+		String[] splitArr = name.replaceAll("\\W", "").split("");
+
+		Map<String, Long> collect = Arrays.stream(splitArr)
+				.collect(Collectors.groupingBy(s -> s, Collectors.counting()));
+
+		List<String> collect2 = collect.entrySet().stream().filter(entry -> entry.getValue() > 1)
+				.map(entry -> entry.getKey()).collect(Collectors.toList());
 
 		return collect2;
 	}
@@ -455,6 +469,7 @@ public class FindDuplicateCharactersInString {
 		return duplicates;
 	}
 }
+
 
 ```
 
