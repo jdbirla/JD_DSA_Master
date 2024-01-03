@@ -1,10 +1,8 @@
 package com.jd.ds.linkedlist;
 
-public class LinkedList {
-    private Node head;
-    private Node tail;
-    private int length;
+import java.util.List;
 
+public class LinkedListJd {
     class Node {
         int value;
         Node next;
@@ -22,41 +20,36 @@ public class LinkedList {
         }
     }
 
-    public LinkedList(int value) {
+    Node head;
+    Node tail;
+    int length;
+
+    public LinkedListJd(int value) {
         Node newNode = new Node(value);
         head = newNode;
         tail = newNode;
         length = 1;
     }
 
-    public void printList() {
+    public void printLinkedList() {
         Node temp = head;
+        System.out.println("\n");
         while (temp != null) {
-            System.out.println(temp.value);
+            System.out.print(temp.value + "->");
             temp = temp.next;
         }
+        System.out.println("\n");
     }
 
-    public void getHead() {
-        if (head == null) {
-            System.out.println("Head: null");
-        } else {
-            System.out.println("Head: " + head.value);
+    public void printLinkedList(Node head) {
+        Node temp = head;
+        System.out.println("\n");
+        while (temp != null) {
+            System.out.print(temp.value + "->");
+            temp = temp.next;
         }
+        System.out.println("\n");
     }
-
-    public void getTail() {
-        if (head == null) {
-            System.out.println("Tail: null");
-        } else {
-            System.out.println("Tail: " + tail.value);
-        }
-    }
-
-    public void getLength() {
-        System.out.println("Length: " + length);
-    }
-
 
     public void append(int value) {
         Node newNode = new Node(value);
@@ -86,6 +79,7 @@ public class LinkedList {
             tail = null;
         }
         return temp;
+
     }
 
     public void prepend(int value) {
@@ -107,31 +101,54 @@ public class LinkedList {
         temp.next = null;
         length--;
         if (length == 0) {
+            head = null;
             tail = null;
         }
         return temp;
+
     }
 
+    // Find nth element from end of linked list
     public Node get(int index) {
-        if (index < 0 || index >= length) return null;
         Node temp = head;
+        if (index < 0 || index >= length) return null;
         for (int i = 0; i < index; i++) {
             temp = temp.next;
         }
+
         return temp;
     }
 
     public boolean set(int index, int value) {
-        Node temp = get(index);
-        if (temp != null) {
-            temp.value = value;
+        Node node = get(index);
+        if (node != null) {
+            node.value = value;
             return true;
         }
         return false;
     }
 
+    public Node remove(int index) {
+        if (index < 0 || index >= length) return null;
+
+        if (index == 0) {
+            return removeFirst();
+        }
+        if (index == length - 1) {
+            return removeLast();
+        }
+
+        Node pre = get(index - 1);
+        Node temp = pre.next;
+        pre.next = temp.next;
+        temp.next = null;
+        length--;
+        return temp;
+    }
+
     public boolean insert(int index, int value) {
         if (index < 0 || index > length) return false;
+
         if (index == 0) {
             prepend(value);
             return true;
@@ -140,6 +157,7 @@ public class LinkedList {
             append(value);
             return true;
         }
+
         Node newNode = new Node(value);
         Node temp = get(index - 1);
         newNode.next = temp.next;
@@ -148,34 +166,24 @@ public class LinkedList {
         return true;
     }
 
-    public Node remove(int index) {
-        if (index < 0 || index >= length) return null;
-        if (index == 0) return removeFirst();
-        if (index == length - 1) return removeLast();
-
-        Node prev = get(index - 1);
-        Node temp = prev.next;
-
-        prev.next = temp.next;
-        temp.next = null;
-        length--;
-        return temp;
-    }
-
+    // How to reverse linked list in java.
     public void reverse() {
         Node temp = head;
         head = tail;
         tail = temp;
         Node after = temp.next;
         Node before = null;
+
         for (int i = 0; i < length; i++) {
             after = temp.next;
             temp.next = before;
             before = temp;
             temp = after;
         }
+
     }
 
+    //How to find middle element of linked list.
     public Node getMiddleNode() {
         Node slowPointer, fastPointer;
         slowPointer = fastPointer = head;
@@ -188,29 +196,44 @@ public class LinkedList {
         }
         return slowPointer;
     }
-    public boolean ifLoopExists() {
-        Node fastPtr = head;
-        Node slowPtr = head;
-        while (fastPtr != null && fastPtr.next != null) {
-            fastPtr = fastPtr.next.next;
-            slowPtr = slowPtr.next;
-            if (slowPtr == fastPtr)
-                return true;
+
+    //Java program to reverse linked list in pairs
+//Lets understand with the help of simple example:
+//    Lets say linkedlist is 5-> 6 -> 7 -> 1
+//    If you look closely, below steps are just reversing link to  6->5->7->1 in first iteration (Swapping node 6 and 5) and then advance to next pair (Node 7 and 1)
+    public Node reverseLinkedListInPairItr() {
+
+        Node current = head;
+        Node temp = null;
+        Node newHead = null;
+        while (current != null && current.next != null) {
+
+            if (temp != null) {
+                // This is important step
+                temp.next.next = current.next;
+            }
+            temp = current.next;
+            current.next = temp.next;
+            temp.next = current;
+
+            if (newHead == null)
+                newHead = temp;
+            current = current.next;
 
         }
-        return false;
+        return newHead;
     }
-
 
     public static void main(String[] args) {
-
-        //Test reverse method
-        LinkedList myLinkedList = new LinkedList(1);
-        myLinkedList.append(5);
-        myLinkedList.append(8);
-        System.out.println(myLinkedList.getMiddleNode());
+        LinkedListJd ll = new LinkedListJd(5);
+        ll.append(10);
+        ll.append(15);
+        ll.append(20);
+        ll.printLinkedList();
+        Node result = ll.reverseLinkedListInPairItr();
+        System.out.println("After reversing in pair");
+        ll.printLinkedList(result);
 
     }
-
 
 }
