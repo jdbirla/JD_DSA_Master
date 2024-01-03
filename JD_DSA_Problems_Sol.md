@@ -1526,14 +1526,17 @@ public class MaxSubArray {
 ## Linked-List
 
 ### Linked List implementation
+- Implement singly linked list in java
+- Implement singly linked list in java
+- Reverse a linked list in java
+- Find the middle element of a linked list in java
+
 ```java
-package com.jd.interviewprep.dsa.impl.ds.linkedlist;
+package com.jd.ds.linkedlist;
 
-public class LinkedList {
-    private Node head;
-    private Node tail;
-    private int length;
+import java.util.List;
 
+public class LinkedListJd {
     class Node {
         int value;
         Node next;
@@ -1551,41 +1554,26 @@ public class LinkedList {
         }
     }
 
-    public LinkedList(int value) {
+    Node head;
+    Node tail;
+    int length;
+
+    public LinkedListJd(int value) {
         Node newNode = new Node(value);
         head = newNode;
         tail = newNode;
         length = 1;
     }
 
-    public void printList() {
+    public void printLinkedList() {
         Node temp = head;
+        System.out.println("\n");
         while (temp != null) {
-            System.out.println(temp.value);
+            System.out.print(temp.value + "->");
             temp = temp.next;
         }
+        System.out.println("\n");
     }
-
-    public void getHead() {
-        if (head == null) {
-            System.out.println("Head: null");
-        } else {
-            System.out.println("Head: " + head.value);
-        }
-    }
-
-    public void getTail() {
-        if (head == null) {
-            System.out.println("Tail: null");
-        } else {
-            System.out.println("Tail: " + tail.value);
-        }
-    }
-
-    public void getLength() {
-        System.out.println("Length: " + length);
-    }
-
 
     public void append(int value) {
         Node newNode = new Node(value);
@@ -1615,6 +1603,7 @@ public class LinkedList {
             tail = null;
         }
         return temp;
+
     }
 
     public void prepend(int value) {
@@ -1636,31 +1625,53 @@ public class LinkedList {
         temp.next = null;
         length--;
         if (length == 0) {
+            head = null;
             tail = null;
         }
         return temp;
+
     }
 
     public Node get(int index) {
-        if (index < 0 || index >= length) return null;
         Node temp = head;
+        if (index < 0 || index >= length) return null;
         for (int i = 0; i < index; i++) {
             temp = temp.next;
         }
+
         return temp;
     }
 
     public boolean set(int index, int value) {
-        Node temp = get(index);
-        if (temp != null) {
-            temp.value = value;
+        Node node = get(index);
+        if (node != null) {
+            node.value = value;
             return true;
         }
         return false;
     }
 
+    public Node remove(int index) {
+        if (index < 0 || index >= length) return null;
+
+        if (index == 0) {
+            return removeFirst();
+        }
+        if (index == length - 1) {
+            return removeLast();
+        }
+
+        Node pre = get(index - 1);
+        Node temp = pre.next;
+        pre.next = temp.next;
+        temp.next = null;
+        length--;
+        return temp;
+    }
+
     public boolean insert(int index, int value) {
         if (index < 0 || index > length) return false;
+
         if (index == 0) {
             prepend(value);
             return true;
@@ -1669,6 +1680,7 @@ public class LinkedList {
             append(value);
             return true;
         }
+
         Node newNode = new Node(value);
         Node temp = get(index - 1);
         newNode.next = temp.next;
@@ -1676,201 +1688,69 @@ public class LinkedList {
         length++;
         return true;
     }
-
-    public Node remove(int index) {
-        if (index < 0 || index >= length) return null;
-        if (index == 0) return removeFirst();
-        if (index == length - 1) return removeLast();
-
-        Node prev = get(index - 1);
-        Node temp = prev.next;
-
-        prev.next = temp.next;
-        temp.next = null;
-        length--;
-        return temp;
-    }
-
+//reverser linkedlist
     public void reverse() {
         Node temp = head;
         head = tail;
         tail = temp;
         Node after = temp.next;
         Node before = null;
+
         for (int i = 0; i < length; i++) {
             after = temp.next;
             temp.next = before;
             before = temp;
             temp = after;
         }
+
     }
+//find the middle node
+    public Node getMiddleNode() {
+        Node slowPointer, fastPointer;
+        slowPointer = fastPointer = head;
+        while (fastPointer != null) {
+            fastPointer = fastPointer.next;
+            if (fastPointer != null && fastPointer.next != null) {
+                slowPointer = slowPointer.next;
+                fastPointer = fastPointer.next;
+            }
+        }
+        return slowPointer;
+    }
+
+    //How to detect loop in a linked list in java with example
+    public boolean ifLoopExists() {
+        Node fastPtr = head;
+        Node slowPtr = head;
+        while (fastPtr != null && fastPtr.next != null) {
+            fastPtr = fastPtr.next.next;
+            slowPtr = slowPtr.next;
+            if (slowPtr == fastPtr)
+                return true;
+
+        }
+        return false;
+    }
+
 
     public static void main(String[] args) {
-       /*  New list test
-        LinkedList myLinkedList = new LinkedList(1);
-        myLinkedList.getHead();
-        myLinkedList.getTail();
-        myLinkedList.getLength();
-        myLinkedList.printList();*/
-       /*
-        // Append method test
-        LinkedList myLinkedList = new LinkedList(1);
-        myLinkedList.append(20);
-        myLinkedList.append(30);
-        myLinkedList.getHead();
-        myLinkedList.getTail();
-        myLinkedList.getLength();
-        myLinkedList.printList();
-        */
-
-        /*
-         // RemoveLast method test
-        LinkedList myLinkedList = new LinkedList(1);
-        myLinkedList.append(20);
-        myLinkedList.append(30);
-        myLinkedList.getHead();
-        myLinkedList.getTail();
-        myLinkedList.getLength();
-        myLinkedList.printList();
-        myLinkedList.removeLast();
-        myLinkedList.getHead();
-        myLinkedList.getTail();
-        myLinkedList.getLength();
-        myLinkedList.printList();
-         */
-
-        /*
-        // prepend method test
-        LinkedList myLinkedList = new LinkedList(1);
-        myLinkedList.getHead();
-        myLinkedList.getTail();
-        myLinkedList.getLength();
-        myLinkedList.printList();
-        myLinkedList.prepend(5);
-        myLinkedList.getHead();
-        myLinkedList.getTail();
-        myLinkedList.getLength();
-        myLinkedList.printList();
-        */
-
-        /*
-         // RemoveFirst method test
-        LinkedList myLinkedList = new LinkedList(1);
-        myLinkedList.append(5);
-        myLinkedList.getHead();
-        myLinkedList.getTail();
-        myLinkedList.getLength();
-        myLinkedList.printList();
-        myLinkedList.removeFirst();
-        myLinkedList.getHead();
-        myLinkedList.getTail();
-        myLinkedList.getLength();
-        myLinkedList.printList();
-         */
-
-        /*
-        // get method test
-        LinkedList myLinkedList = new LinkedList(1);
-        System.out.println(myLinkedList.get(0));
-         */
-
-        /*
-        // set method test
-        LinkedList myLinkedList = new LinkedList(1);
-        System.out.println(myLinkedList.set(1, 5));
-        myLinkedList.printList();
-         */
-
-        /*
-        //insert Method test
-        LinkedList myLinkedList = new LinkedList(1);
-        myLinkedList.append(5);
-        myLinkedList.append(8);
-
-        myLinkedList.getHead();
-        myLinkedList.getTail();
-        myLinkedList.getLength();
-        myLinkedList.printList();
-        myLinkedList.insert(1,10);
-        myLinkedList.getHead();
-        myLinkedList.getTail();
-        myLinkedList.getLength();
-        myLinkedList.printList();
-         */
-
-        /*
-          // remove method test
-        LinkedList myLinkedList = new LinkedList(1);
-        myLinkedList.append(5);
-        myLinkedList.append(8);
-
-        myLinkedList.getHead();
-        myLinkedList.getTail();
-        myLinkedList.getLength();
-        myLinkedList.printList();
-        myLinkedList.remove(1);
-        myLinkedList.getHead();
-        myLinkedList.getTail();
-        myLinkedList.getLength();
-        myLinkedList.printList();
-         */
-
-
-        //Test reverse method
-        LinkedList myLinkedList = new LinkedList(1);
-        myLinkedList.append(5);
-        myLinkedList.append(8);
-        myLinkedList.reverse();
-        myLinkedList.printList();
-
+        LinkedListJd ll = new LinkedListJd(5);
+        ll.append(10);
+        ll.append(15);
+        ll.append(20);
+        ll.printLinkedList();
+        // Test if loop existed or not
+        System.out.println("Loop existed-->" + ll.ifLoopExists());
     }
 
-
 }
+
 
 ```
 
-### How do you reverse a linked list in Java?
-```java
-package com.jd.interviewprep.dsa.prob;
-
-import java.util.LinkedList;
-
-public class LinkedListReverse {
-public static void main(String[] args) {
-	LinkedList<Integer> ll = new LinkedList<>();
-
-	ll.add(1);
-	ll.add(2);
-	ll.add(3);
-
-	System.out.println(ll);
-
-	LinkedList<Integer> ll1 = new LinkedList<>();
-
-	ll.descendingIterator().forEachRemaining(ll1::add);
-
-	System.out.println(ll1);
-}
-}
-
-```
-### Implement singly linked list in java
-- https://java2blog.com/implement-singly-linked-list-in-java/
-
-### Reverse a linked list in java
-- https://java2blog.com/how-to-reverse-linked-list-in-java/
-
-### Find the middle element of a linked list in java
-- https://java2blog.com/find-middle-element-of-linkedlist-in/
-
-### Find nth element from end of linked list
-- https://java2blog.com/find-nth-element-from-end-of-linked-list/
-
-### How to check if linked list is palindrome in java
-- https://www.java2blog.com/how-to-check-if-linked-list-is/
 ### Doubly Linked List in java
 - https://java2blog.com/doubly-linked-list-java/
+  
 ---
 ## Stack
 ###  Implement a stack using array.
