@@ -18,7 +18,7 @@
     - [How to check if String has all unique characters in java](#how-to-check-if-string-has-all-unique-characters-in-java)
     - [Java Program to find duplicate Characters in a String](#java-program-to-find-duplicate-characters-in-a-string)
     - [Find all substrings of a String in java](#find-all-substrings-of-a-string-in-java)
-    - [Given two non-negative integers, num1 and num2 represented as string, return the sum of num1 and num2 as a string](#given two non-negative integers, num1 and num2 represented as string, return the sum of num1 and num2 as a string)
+    - [Given two non-negative integers num1 and num2 represented as string return the sum of num1 and num2 as a string](#given two non-negative integers num1 and num2 represented as string return the sum of num1 and num2 as a string)
   - [Array Problems](#array-problems)
     - [Java program to find missing number in an array](#java-program-to-find-missing-number-in-an-array)
     - [Rotate an array by K positions.](#rotate-an-array-by-k-positions)
@@ -569,7 +569,7 @@ public class SubstringsOfStringMain {
 }
 
 ```
-### Given two non-negative integers, num1 and num2 represented as string, return the sum of num1 and num2 as a string.
+### Given two non-negative integers num1 and num2 represented as string return the sum of num1 and num2 as a string
 -  You must solve the problem without using any built-in library for handling large integers (such as BigInteger). You must also not convert the inputs to integers directly.
 ```java
 package com.jd.interviewprep.dsa.prob.string;
