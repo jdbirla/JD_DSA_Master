@@ -14,6 +14,7 @@
     - [Write a java program to check if two Strings are anagram in java?](#write-a-java-program-to-check-if-two-strings-are-anagram-in-java)
     - [How to check if one String is rotation of another String in java?](#how-to-check-if-one-string-is-rotation-of-another-string-in-java)
     - [Find first non repeated character in String in java?](#find-first-non-repeated-character-in-string-in-java)
+    - [Find first repeated character in String in java?](#find-first-repeated-character-in-string-in-java)
     - [Find the longest substring without repeating characters](#find-the-longest-substring-without-repeating-characters)
     - [How to check if String has all unique characters in java](#how-to-check-if-string-has-all-unique-characters-in-java)
     - [Java Program to find duplicate Characters in a String](#java-program-to-find-duplicate-characters-in-a-string)
