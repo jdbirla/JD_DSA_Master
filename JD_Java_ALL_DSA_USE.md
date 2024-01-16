@@ -56,13 +56,7 @@ Note:
 - "Is Stable" indicates whether the algorithm maintains the relative order of equal elements.
 - "Advantages" and "Disadvantages" list some common pros and cons of each algorithm.
 - "Use Case" suggests scenarios where each algorithm might be suitable based on its characteristics.
-- 
-#### Bubble Sort
-In Bubble Sort algorithm, 
-- traverse from left and compare adjacent elements and the higher one is placed at right side. 
-- In this way, the largest element is moved to the rightmost end at first. 
-- This process is then continued to find the second largest and place it and so on until the data is sorted.
-#### Selection Sort
+  
 
 
 ## Array
