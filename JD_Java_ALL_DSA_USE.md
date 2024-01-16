@@ -41,11 +41,15 @@
 ## Algo 
 ### Basic sort
 
-Certainly! Here's an updated comparison table that includes Quick Sort and Merge Sort along with Bubble Sort, Selection Sort, and Insertion Sort:
-
 | Algo Name       | Sort Algorithm Steps                                           | Time Complexity (Worst Case) | Space Complexity | Advantages                                       | Disadvantages                                              | In Place | Is Stable | Use Case                                           |
 | --------------- | -------------------------------------------------------------- | ---------------------------- | ----------------- | ------------------------------------------------ | ---------------------------------------------------------- | ---------| --------- | --------------------------------------------------- |
-| Bubble Sort     | 1. Compare adjacent elements. 2. Swap if needed.              | O(n^2)                        | O(1)              | Simple implementation                            | Inefficient for large datasets. Poor time complexity.        | Yes      | Yes       | Educational purposes, small datasets                   |
+| Bubble Sort     | 1. Compare adjacent elements. 2. Swap if needed.              | O(n^2)                        | O(1)              | Bubble sort is easy to understand and implement.
+It does not require any additional memory space.
+It is a stable sorting algorithm, meaning that elements with the same key value maintain their relative order in the sorted output.                          | Bubble sort is easy to understand and implement.
+It does not require any additional memory space.
+It is a stable sorting algorithm, meaning that elements with the same key value maintain their relative order in the sorted output.      | Yes      | Yes       | Educational purposes, small datasets  Bubble sort is easy to understand and implement.
+It does not require any additional memory space.
+It is a stable sorting algorithm, meaning that elements with the same key value maintain their relative order in the sorted output.                 |
 | Selection Sort  | 1. Find minimum element. 2. Swap with first element.          | O(n^2)                        | O(1)              | Simple implementation. In-place sorting.          | Inefficient for large datasets. Poor time complexity.        | Yes      | No        | Educational purposes, small datasets                   |
 | Insertion Sort  | 1. Build sorted array incrementally.                         | O(n^2)                        | O(1)              | Efficient for small datasets. Adaptive.          | Inefficient for large datasets. Poor time complexity.        | Yes      | Yes       | Small datasets, partially sorted data                |
 | Quick Sort      | 1. Choose a pivot. 2. Partition array around the pivot.       | O(n^2) (rare, with poor pivot choices) | O(log n)       | Efficient for large datasets. Good average case. | Worst-case time complexity can be poor (mitigated with good pivots). | Yes      | No        | General-purpose, large datasets, quick sorting       |
