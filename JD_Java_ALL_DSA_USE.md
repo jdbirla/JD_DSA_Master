@@ -38,6 +38,30 @@
 ![image](https://github.com/jdbirla/JD_DSA_Master/assets/69948118/c1f64867-0e80-4acc-a8fa-d3b55f8fa95a)
 ![image](https://github.com/jdbirla/JD_DSA_Master/assets/69948118/a01a271f-828d-4677-8002-bd588319d7c4)
 
+## Algo 
+### Basic sort
+
+| Algo Name       | Sort Algorithm Steps                                   | Time Complexity (Worst Case) | Space Complexity | Advantages                                       | Disadvantages                                          | In Place | Is Stable | Use Case                                  |
+| --------------- | ------------------------------------------------------ | ---------------------------- | ----------------- | ------------------------------------------------ | ------------------------------------------------------ | ---------| --------- | ------------------------------------------ |
+| Bubble Sort     | 1. Compare adjacent elements. 2. Swap if needed.      | O(n^2)                        | O(1)              | Simple implementation                            | Inefficient for large datasets. Poor time complexity.    | Yes      | Yes       | Educational purposes, small datasets       |
+| Selection Sort  | 1. Find minimum element. 2. Swap with first element.  | O(n^2)                        | O(1)              | Simple implementation. In-place sorting.          | Inefficient for large datasets. Poor time complexity.    | Yes      | No        | Educational purposes, small datasets       |
+| Insertion Sort  | 1. Build sorted array incrementally.                   | O(n^2)                        | O(1)              | Efficient for small datasets. Adaptive.          | Inefficient for large datasets. Poor time complexity.    | Yes      | Yes       | Small datasets, partially sorted data    |
+
+Note:
+- "Time Complexity (Worst Case)" refers to the worst-case time complexity of each algorithm.
+- "Space Complexity" refers to the additional space used by the algorithm, excluding the input data.
+- "In Place" indicates whether the algorithm sorts the data in the input array itself or requires additional space.
+- "Is Stable" indicates whether the algorithm maintains the relative order of equal elements.
+- "Advantages" and "Disadvantages" list some common pros and cons of each algorithm.
+- "Use Case" suggests scenarios where each algorithm might be suitable based on its characteristics.
+- 
+#### Bubble Sort
+In Bubble Sort algorithm, 
+- traverse from left and compare adjacent elements and the higher one is placed at right side. 
+- In this way, the largest element is moved to the rightmost end at first. 
+- This process is then continued to find the second largest and place it and so on until the data is sorted.
+#### Selection Sort
+
 
 ## Array
 - A fixed-size collection of elements of the same type, accessed by an index.
