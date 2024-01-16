@@ -41,11 +41,15 @@
 ## Algo 
 ### Basic sort
 
-| Algo Name       | Sort Algorithm Steps                                   | Time Complexity (Worst Case) | Space Complexity | Advantages                                       | Disadvantages                                          | In Place | Is Stable | Use Case                                  |
-| --------------- | ------------------------------------------------------ | ---------------------------- | ----------------- | ------------------------------------------------ | ------------------------------------------------------ | ---------| --------- | ------------------------------------------ |
-| Bubble Sort     | 1. Compare adjacent elements. 2. Swap if needed.      | O(n^2)                        | O(1)              | Simple implementation                            | Inefficient for large datasets. Poor time complexity.    | Yes      | Yes       | Educational purposes, small datasets       |
-| Selection Sort  | 1. Find minimum element. 2. Swap with first element.  | O(n^2)                        | O(1)              | Simple implementation. In-place sorting.          | Inefficient for large datasets. Poor time complexity.    | Yes      | No        | Educational purposes, small datasets       |
-| Insertion Sort  | 1. Build sorted array incrementally.                   | O(n^2)                        | O(1)              | Efficient for small datasets. Adaptive.          | Inefficient for large datasets. Poor time complexity.    | Yes      | Yes       | Small datasets, partially sorted data    |
+Certainly! Here's an updated comparison table that includes Quick Sort and Merge Sort along with Bubble Sort, Selection Sort, and Insertion Sort:
+
+| Algo Name       | Sort Algorithm Steps                                           | Time Complexity (Worst Case) | Space Complexity | Advantages                                       | Disadvantages                                              | In Place | Is Stable | Use Case                                           |
+| --------------- | -------------------------------------------------------------- | ---------------------------- | ----------------- | ------------------------------------------------ | ---------------------------------------------------------- | ---------| --------- | --------------------------------------------------- |
+| Bubble Sort     | 1. Compare adjacent elements. 2. Swap if needed.              | O(n^2)                        | O(1)              | Simple implementation                            | Inefficient for large datasets. Poor time complexity.        | Yes      | Yes       | Educational purposes, small datasets                   |
+| Selection Sort  | 1. Find minimum element. 2. Swap with first element.          | O(n^2)                        | O(1)              | Simple implementation. In-place sorting.          | Inefficient for large datasets. Poor time complexity.        | Yes      | No        | Educational purposes, small datasets                   |
+| Insertion Sort  | 1. Build sorted array incrementally.                         | O(n^2)                        | O(1)              | Efficient for small datasets. Adaptive.          | Inefficient for large datasets. Poor time complexity.        | Yes      | Yes       | Small datasets, partially sorted data                |
+| Quick Sort      | 1. Choose a pivot. 2. Partition array around the pivot.       | O(n^2) (rare, with poor pivot choices) | O(log n)       | Efficient for large datasets. Good average case. | Worst-case time complexity can be poor (mitigated with good pivots). | Yes      | No        | General-purpose, large datasets, quick sorting       |
+| Merge Sort      | 1. Divide array into halves. 2. Recursively sort each half.   | O(n log n)                   | O(n)              | Stable. Consistent performance.                   | Requires additional space for merging.                      | No       | Yes       | General-purpose, stable sorting, linked lists        |
 
 Note:
 - "Time Complexity (Worst Case)" refers to the worst-case time complexity of each algorithm.
