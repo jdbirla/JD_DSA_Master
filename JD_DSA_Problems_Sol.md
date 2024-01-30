@@ -2182,6 +2182,164 @@ public class FabonacciNumber {
 ```
 ---
 ## Binary Seach
+
+### What Binary Tree and Binary Search Tree
+- A binary tree is a hierarchical data structure in which each node has at most two children, referred to as the left child and the right child. These nodes represent elements in the tree, and the structure of the tree ensures efficient search, insertion, and deletion operations.
+
+A binary search tree (BST) is a specific type of binary tree that follows a particular ordering property: for each node, all elements in its left subtree are less than or equal to the node's value, and all elements in its right subtree are greater than the node's value. This ordering property makes binary search trees suitable for efficient searching operations.
+
+##### Binary Tree:
+
+In a binary tree:
+- Each node has at most two children: a left child and a right child.
+- Nodes may have fewer than two children, and a node with no children is called a leaf node.
+- The order or relationship between nodes doesn't necessarily follow any specific pattern.
+
+Example of a binary tree:
+```
+    1
+   / \
+  2   3
+ / \
+4   5
+```
+
+##### Binary Search Tree (BST):
+
+In a binary search tree:
+- Each node has at most two children: a left child and a right child.
+- For each node, all elements in its left subtree are less than or equal to the node's value.
+- For each node, all elements in its right subtree are greater than the node's value.
+- This ordering property allows for efficient searching and retrieval operations.
+
+Example of a binary search tree:
+```
+    3
+   / \
+  1   4
+ / \
+2   5
+```
+
+##### Differences:
+
+1. **Ordering Property:**
+   - In a binary tree, there is no specific ordering property between the nodes.
+   - In a binary search tree, there is a strict ordering property where the left subtree of a node contains elements less than or equal to the node, and the right subtree contains elements greater than the node.
+
+2. **Search Efficiency:**
+   - Binary search trees provide efficient search operations due to their ordering property, making it possible to eliminate half of the remaining elements in each comparison.
+   - Binary trees, without the ordering property, may require searching the entire tree in worst-case scenarios.
+
+3. **Use Cases:**
+   - Binary trees can be used for various applications where a hierarchical structure is needed, but ordering is not a primary concern.
+   - Binary search trees are particularly useful when you need to efficiently search for, insert, or delete elements in a sorted collection.
+
+In summary, while both binary trees and binary search trees share the basic structure of having at most two children per node, the crucial difference lies in the ordering property. The ordering property of a binary search tree facilitates efficient searching and makes it well-suited for applications that involve maintaining a sorted collection of elements.
+
+- The time complexity of various operations in binary trees and binary search trees (BST) depends on the specific implementation, the distribution of the data, and whether the tree is balanced or not. Here, I'll provide an overview of the typical time complexities for key operations in both types of trees.
+
+##### Binary Tree:
+
+1. **Search:**
+   - Average Case: O(n) (unbalanced tree)
+   - Worst Case: O(n) (unbalanced tree)
+
+2. **Insertion:**
+   - Average Case: O(n) (unbalanced tree)
+   - Worst Case: O(n) (unbalanced tree)
+
+3. **Deletion:**
+   - Average Case: O(n) (unbalanced tree)
+   - Worst Case: O(n) (unbalanced tree)
+
+##### Binary Search Tree (BST):
+
+1. **Search:**
+   - Average Case: O(log n) (balanced tree)
+   - Worst Case: O(n) (unbalanced tree)
+
+2. **Insertion:**
+   - Average Case: O(log n) (balanced tree)
+   - Worst Case: O(n) (unbalanced tree)
+
+3. **Deletion:**
+   - Average Case: O(log n) (balanced tree)
+   - Worst Case: O(n) (unbalanced tree)
+
+##### Balanced Binary Search Tree (e.g., AVL Tree, Red-Black Tree):
+
+Balanced binary search trees maintain their balance during insertions and deletions, ensuring more consistent performance.
+
+1. **Search:**
+   - Average Case: O(log n) (balanced tree)
+   - Worst Case: O(log n) (balanced tree)
+
+2. **Insertion:**
+   - Average Case: O(log n) (balanced tree)
+   - Worst Case: O(log n) (balanced tree)
+
+3. **Deletion:**
+   - Average Case: O(log n) (balanced tree)
+   - Worst Case: O(log n) (balanced tree)
+
+##### Remarks:
+
+- The time complexity for search, insertion, and deletion in an unbalanced binary tree is O(n) in the worst case, as it may essentially become a linked list.
+
+- Binary search trees perform well when they are balanced, but in the worst case (unbalanced), their time complexities degrade to those of a regular binary tree.
+
+- Balanced binary search trees, such as AVL trees or Red-Black trees, are designed to maintain balance during insertions and deletions, leading to more consistent logarithmic time complexities for search, insertion, and deletion.
+
+In practice, when a balanced tree is maintained, the average-case time complexities are more relevant, and these structures can provide efficient operations for large datasets. However, the performance of unbalanced trees can degrade significantly, leading to worst-case time complexities similar to those of regular binary trees.
+
+- Balanced Binary Search Trees (BSTs) and Unbalanced Binary Search Trees refer to the different states of binary search trees based on their structure and balance. The key distinction lies in how well the tree maintains balance during insertions and deletions, impacting the efficiency of search, insertion, and deletion operations.
+
+##### Balanced Binary Search Trees:
+
+Balanced BSTs are designed to maintain balance, ensuring that the height of the tree remains logarithmic in relation to the number of elements. This balance is typically achieved through self-balancing mechanisms implemented during insertions and deletions.
+
+Common types of balanced binary search trees include:
+
+1. **AVL Tree:**
+   - AVL trees are self-balancing binary search trees.
+   - They maintain balance by ensuring that the height difference between the left and right subtrees of any node (balance factor) is at most 1.
+   - Balancing operations (rotations) are performed during insertions and deletions to maintain the balance.
+
+2. **Red-Black Tree:**
+   - Red-Black trees are another type of self-balancing binary search tree.
+   - They enforce specific properties, such as color-coding nodes as red or black, and ensure that certain properties are maintained during insertions and deletions.
+   - The balancing operations involve rotations and color changes.
+
+##### Unbalanced Binary Search Trees:
+
+Unbalanced BSTs do not have mechanisms to maintain balance during insertions and deletions. As a result, the tree structure can degenerate into a linked list in the worst case.
+
+Common types of unbalanced binary search trees include:
+
+1. **Regular Binary Tree:**
+   - A binary tree without any specific balancing mechanism.
+   - The structure depends on the order of insertions, and it may become unbalanced, leading to inefficient search and retrieval operations in the worst case.
+
+##### Key Differences:
+
+1. **Balancing:**
+   - **Balanced BSTs:** These trees actively maintain balance through mechanisms like rotations to ensure that the height remains logarithmic.
+   - **Unbalanced BSTs:** These trees do not have mechanisms to maintain balance, and their structure depends on the order of insertions.
+
+2. **Efficiency:**
+   - **Balanced BSTs:** Provide efficient search, insertion, and deletion operations with logarithmic time complexity in the average and worst cases.
+   - **Unbalanced BSTs:** May provide inefficient operations with linear time complexity in the worst case if the tree becomes skewed.
+
+3. **Examples:**
+   - **Balanced BSTs:** AVL Tree, Red-Black Tree.
+   - **Unbalanced BSTs:** Regular Binary Tree.
+
+##### Summary:
+
+In practice, using balanced binary search trees is often preferred when maintaining efficient search and retrieval operations is crucial, especially for large datasets. Balanced trees ensure that the worst-case time complexities remain logarithmic, providing consistent performance. Unbalanced trees, on the other hand, may lead to performance degradation in worst-case scenarios, making them less suitable for certain applications where efficient search and retrieval are essential.
+
+
 ### How do you implement a binary search in Java?
 - If the key is less than the middle element, then you now need to search only in the first half of the array.
 - If the key is greater than the middle element, then you need to search only in the second half of the array.
