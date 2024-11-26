@@ -16,6 +16,138 @@
   - [HashMap:](#hashmap)
   - [TreeMap:](#treemap)
   - [LinkedHashMap:](#linkedhashmap)
+
+## Complexities Name and detials
+- In computer science, complexities describe the efficiency of algorithms in terms of time (how long it takes to execute) and space (how much memory it uses). These complexities are expressed using *Big O Notation*, which provides an upper bound on their growth rate as the input size \( n \) increases.
+
+
+
+
+### **1. Constant Time**
+- **Name:** Constant Time Complexity  
+- **Symbol:** \( O(1) \)  
+- **Meaning:** The algorithm's runtime does not depend on the input size. It takes the same amount of time regardless of the input.  
+- **Example:** Accessing an element in an array by index.  
+  ```javascript
+  let x = array[5]; // Always takes constant time
+  ```
+
+
+
+### **2. Logarithmic Time**
+- **Name:** Logarithmic Time Complexity  
+- **Symbol:** \( O(\log n) \)  
+- **Meaning:** The runtime increases logarithmically as the input size increases. Typically seen in divide-and-conquer algorithms like binary search.  
+- **Example:** Searching in a sorted array using binary search.  
+  ```javascript
+  function binarySearch(arr, target) { /* O(log n) */ }
+  ```
+
+
+
+### **3. Linear Time**
+- **Name:** Linear Time Complexity  
+- **Symbol:** \( O(n) \)  
+- **Meaning:** The runtime grows directly proportional to the input size. For every additional input, the algorithm takes proportionally more time.  
+- **Example:** Traversing an array.  
+  ```javascript
+  for (let i = 0; i < array.length; i++) { /* O(n) */ }
+  ```
+
+
+
+### **4. Linearithmic Time**
+- **Name:** Linearithmic (or Log-Linear) Time Complexity  
+- **Symbol:** \( O(n \log n) \)  
+- **Meaning:** The runtime is proportional to the input size multiplied by the logarithm of the input size. Common in efficient sorting algorithms like merge sort and quicksort.  
+- **Example:** Sorting an array using merge sort.  
+  ```javascript
+  function mergeSort(arr) { /* O(n log n) */ }
+  ```
+
+
+
+### **5. Quadratic Time**
+- **Name:** Quadratic Time Complexity  
+- **Symbol:** \( O(n^2) \)  
+- **Meaning:** The runtime grows proportionally to the square of the input size. Often results from nested loops.  
+- **Example:** Comparing all pairs of elements in an array.  
+  ```javascript
+  for (let i = 0; i < n; i++) {
+      for (let j = 0; j < n; j++) { /* O(n^2) */ }
+  }
+  ```
+
+
+
+### **6. Cubic Time**
+- **Name:** Cubic Time Complexity  
+- **Symbol:** \( O(n^3) \)  
+- **Meaning:** The runtime grows proportionally to the cube of the input size. Seen in algorithms with three nested loops.  
+- **Example:** Matrix multiplication.  
+  ```javascript
+  for (let i = 0; i < n; i++) {
+      for (let j = 0; j < n; j++) {
+          for (let k = 0; k < n; k++) { /* O(n^3) */ }
+      }
+  }
+  ```
+
+
+
+### **7. Exponential Time**
+- **Name:** Exponential Time Complexity  
+- **Symbol:** \( O(2^n) \)  
+- **Meaning:** The runtime doubles with each additional input size. Often occurs in recursive algorithms with multiple branches.  
+- **Example:** Solving the Tower of Hanoi.  
+  ```javascript
+  function hanoi(n, from, to, aux) {
+      if (n > 0) {
+          hanoi(n - 1, from, aux, to);
+          hanoi(n - 1, aux, to, from);
+      }
+  }
+  ```
+
+
+
+### **8. Factorial Time**
+- **Name:** Factorial Time Complexity  
+- **Symbol:** \( O(n!) \)  
+- **Meaning:** The runtime grows factorially as the input size increases. Common in brute-force algorithms, like generating all permutations.  
+- **Example:** Generating permutations of a string.  
+  ```javascript
+  function permutations(string) { /* O(n!) */ }
+  ```
+
+
+
+### **9. Polynomial Time**
+- **Name:** Polynomial Time Complexity  
+- **Symbol:** \( O(n^k) \), where \( k \geq 1 \)  
+- **Meaning:** The runtime is proportional to \( n^k \), where \( k \) is a constant. Includes quadratic, cubic, and higher-order polynomials.  
+
+
+
+### **10. Logarithmic Factorial Time**
+- **Name:** Logarithmic Factorial Time Complexity  
+- **Symbol:** \( O(\log n!) \)  
+- **Meaning:** Closely tied to sorting algorithms and permutations.  
+
+
+
+### Complexity Comparison (From Fastest to Slowest Growth Rate)
+| Name                 | Symbol     | Example Use Case                             |
+|----------------------|------------|---------------------------------------------|
+| Constant             | \( O(1) \)  | Accessing an array element.                |
+| Logarithmic          | \( O(\log n) \)  | Binary search.                             |
+| Linear               | \( O(n) \)  | Traversing an array.                        |
+| Linearithmic         | \( O(n \log n) \) | Merge sort, quicksort.                     |
+| Quadratic            | \( O(n^2) \) | Comparing pairs (nested loops).            |
+| Cubic                | \( O(n^3) \) | Matrix multiplication.                     |
+| Exponential          | \( O(2^n) \) | Recursive problems (e.g., Tower of Hanoi). |
+| Factorial            | \( O(n!) \) | Generating permutations.                   |
+
  
 ## DSA Table
 | Data Structure | Complexity (Average Case) | Complexity (Worst Case) | Explanation and Use Cases |
